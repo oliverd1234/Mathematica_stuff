@@ -1,0 +1,398 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15933,        390]
+NotebookOptionsPosition[     13492,        344]
+NotebookOutlinePosition[     13899,        360]
+CellTagsIndexPosition[     13856,        357]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"total", ":=", 
+  RowBox[{"Length", "@", 
+   RowBox[{"Tuples", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], 
+     ",", "6"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8186857893580236`*^9, 3.8186857908880167`*^9}, {
+  3.818685861488036*^9, 3.8186858975304904`*^9}, {3.818685938769498*^9, 
+  3.818685980194497*^9}, {3.8186861088568244`*^9, 3.8186861575428257`*^9}, {
+  3.818687473210002*^9, 3.818687501832878*^9}, {3.8186883292873263`*^9, 
+  3.8186883356928825`*^9}, {3.8186883659240837`*^9, 3.818688366748087*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"5bfb21a7-f6ac-4707-8162-ab4cc4c1d357"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.818687483994219*^9, 3.818687492808239*^9}},
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"2d26c2e1-8531-4118-aaf1-774bc2d10e1c"],
+
+Cell[BoxData[{
+ RowBox[{"numOf123", ":=", 
+  RowBox[{"Length", "@", 
+   RowBox[{"Permutations", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6"}], "}"}], 
+     ",", 
+     RowBox[{"{", "6", "}"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"this", " ", 
+      RowBox[{"isn", "'"}], "t", " ", "quite", " ", "right"}], ";", " ", 
+     RowBox[{"there", " ", "can", " ", "be", " ", "1"}]}], ",", "2", ",", "3",
+     ",", "4", ",", "4", ",", "6"}], "\[IndentingNewLine]", 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.818688045103423*^9, 3.818688088487787*^9}, {
+  3.8186882045485296`*^9, 3.818688259082059*^9}, {3.8186882989853086`*^9, 
+  3.8186883428108797`*^9}, {3.818688515305906*^9, 3.818688554541256*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"9fc17710-1e4b-417d-8333-5987cd0b9fb6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"N", "@", "numOf123"}], "/", "total"}]], "Input",
+ CellChangeTimes->{{3.818688347772876*^9, 3.8186883761520166`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"47373c2d-9f8c-450b-9ce7-c870d5fb1286"],
+
+Cell[BoxData["0.015432098765432098`"], "Output",
+ CellChangeTimes->{{3.8186883526203594`*^9, 3.8186883766799955`*^9}},
+ CellLabel->"Out[26]=",ExpressionUUID->"2e1a517e-0fde-41d2-99bb-3478a2f1921f"]
+}, Open  ]],
+
+Cell[BoxData["e"], "Input",
+ CellChangeTimes->{
+  3.8186883525829463`*^9},ExpressionUUID->"5a68e627-1890-4ecd-a10b-\
+2c74114b8a36"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.818688321248309*^9, 
+  3.8186883230723267`*^9}},ExpressionUUID->"2d891da8-747c-4dba-bc89-\
+be8b992e9808"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{
+     RowBox[{"6", "+", "2", "-", "1"}], ",", "3"}], "]"}], "*", 
+   RowBox[{"Length", "@", 
+    RowBox[{"Permutations", "[", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], "]"}]}]}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"No", "!"}], " ", "This", " ", "mutated", " ", "version", " ", 
+      "of", " ", "the", " ", "BinCoef", " ", "gives", " ", "the", " ", 
+      "number", " ", "of", " ", "ways", " ", "to", " ", "choose", " ", "3", 
+      " ", "objects", " ", "from", " ", "a", " ", "list", " ", "with", " ", 
+      "replacement"}], ";", " ", "BUT"}], ",", " ", 
+    RowBox[{"the", " ", "order", " ", "is", " ", "disregarded"}], ",", " ", 
+    RowBox[{"so", " ", "if", " ", "4"}], ",", "4", ",", 
+    RowBox[{"5", " ", "us", " ", "counted"}], ",", " ", 
+    RowBox[{"then", " ", "4"}], ",", "5", ",", 
+    RowBox[{"4", " ", "is", " ", 
+     RowBox[{"not", "."}]}]}], "\[IndentingNewLine]", "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.818688588161598*^9, 3.8186886095065536`*^9}, {
+  3.8186886701959925`*^9, 3.8186886872179427`*^9}, {3.8186888114844313`*^9, 
+  3.8186888193794317`*^9}, {3.818689365140382*^9, 3.8186893686544*^9}, {
+  3.818689445206415*^9, 3.8186895170098944`*^9}, {3.8186895549061584`*^9, 
+  3.818689650562329*^9}},ExpressionUUID->"37a29328-e358-45c5-8cf0-\
+a52cefbc8ac5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Power", "[", 
+   RowBox[{"6", ",", "3"}], "]"}], "*", 
+  RowBox[{"Length", "@", 
+   RowBox[{"Permutations", "[", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2", ",", "3"}], "}"}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", "\t", 
+   RowBox[{
+    RowBox[{"Consider", " ", "1"}], ",", "2", ",", "3", ",", " ", "_", ",", 
+    " ", "_", " ", ",", 
+    RowBox[{
+    "_", "\[IndentingNewLine]", "\[IndentingNewLine]", "    ", "We", " ", 
+     "have", " ", "to", " ", "count", " ", "permutations", " ", "of", " ", 
+     "that", " ", "1"}], ",", "2", ",", 
+    RowBox[{
+    "3", " ", "AND", " ", "the", " ", "possible", " ", "choices", " ", "for", 
+     " ", "_"}], ",", "_", ",", 
+    RowBox[{"_.", "\[IndentingNewLine]", "\[IndentingNewLine]", "BUT"}], ",", 
+    " ", 
+    RowBox[{"this", " ", "is", " ", "with", " ", "1"}], ",", "2", ",", 
+    RowBox[{
+     RowBox[{
+     "3", " ", "locked", " ", "in", " ", "on", " ", "the", " ", "left"}], ";",
+      " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "there", " ", "may", " ", "be", " ", "more", " ", "or", " ", "less"}], 
+       "..."}], "\[IndentingNewLine]", "\[IndentingNewLine]", "We", " ", 
+      "can", " ", "count", " ", "the", " ", "number", " ", "of", " ", "ways", 
+      " ", "to", " ", "spread", " ", "1"}]}], ",", "2", ",", 
+    RowBox[{"3", " ", "across", " ", "the", " ", "6", " ", "slots"}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "but", " ", "we", " ", "might", " ", "end", " ", "up", " ", "with", " ", 
+       RowBox[{
+       "repeats", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "Currently"}], " ", "have", " ", "no", " ", "reason", " ", "to", " ", 
+       "believe", " ", "that", " ", "repeats", " ", "are", " ", "possible"}], 
+      "..."}], "\[IndentingNewLine]", "\[IndentingNewLine]", "as", " ", 
+     "long", " ", "as", " ", "we", " ", "are", " ", "careful", " ", "about", 
+     " ", "permuting", " ", "1"}], ",", "2", ",", "3", ",", " ", "AGAIN", ",",
+     " ", 
+    RowBox[{"we", " ", "should", " ", "be", " ", 
+     RowBox[{
+     "ok", ".", " ", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      "Meaning"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{
+     "we", " ", "should", " ", "probably", " ", "forego", " ", "the", " ", 
+      "locked"}], "-", 
+     RowBox[{"in", " ", "1"}]}], ",", "2", ",", 
+    RowBox[{"3", " ", "permutation"}], ",", " ", 
+    RowBox[{
+    "and", " ", "just", " ", "count", " ", "the", " ", "number", " ", "of", 
+     " ", "ways", " ", "to", " ", "spread", " ", "1"}], ",", "2", ",", 
+    RowBox[{"3", " ", "around", " ", "the", " ", "6", " ", 
+     RowBox[{"entries", "."}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8186890139981003`*^9, 3.818689037267818*^9}, 
+   3.818689071092818*^9, {3.8186896587843523`*^9, 3.8186897321146708`*^9}, {
+   3.8186897658453226`*^9, 3.8186898049372206`*^9}, {3.818689906353492*^9, 
+   3.818689921983344*^9}, {3.818690084038162*^9, 3.8186900946886497`*^9}, {
+   3.818690138308179*^9, 
+   3.8186902172667227`*^9}},ExpressionUUID->"6d9b5c94-673a-487b-a07c-\
+78a7b01b352d"],
+
+Cell[BoxData["1296"], "Output",
+ CellChangeTimes->{{3.8186890196570845`*^9, 3.8186890320128117`*^9}, 
+   3.8186890716878123`*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"cd566e5d-7cba-4515-a478-cd6e616f229c"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"px", ":=", 
+  RowBox[{
+   RowBox[{"N", "@", "1296"}], "/", "total"}]}]], "Input",
+ CellChangeTimes->{{3.81868907768037*^9, 3.818689159347299*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"93bf5eb7-4f66-4a08-a918-97977fbc0f9a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "px"}]], "Input",
+ CellChangeTimes->{{3.8186891634653025`*^9, 3.818689193885282*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"a18769ca-48fe-4ec9-900b-345074c0560b"],
+
+Cell[BoxData["0.9722222222222222`"], "Output",
+ CellChangeTimes->{3.8186891943935184`*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"0e1858ce-9c19-4e4a-8f8b-8a946aad58a2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Power", "[", 
+  RowBox[{
+   RowBox[{"1", "-", "px"}], ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8186891979905376`*^9, 3.81868920481954*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"99e07d71-00f1-437b-9be5-6983b8d47c41"],
+
+Cell[BoxData["0.9189600480109739`"], "Output",
+ CellChangeTimes->{3.8186892052475185`*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"13c19a0a-7dc3-4702-8fed-14f5223b2fdb"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"Factorial", "[", "7", "]"}], 
+    RowBox[{"Factorial", "[", "4", "]"}]], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.8186904256687284`*^9, 3.8186904287827263`*^9}, {
+  3.818690709394738*^9, 
+  3.81869074108899*^9}},ExpressionUUID->"2c11b128-6927-431a-bb19-\
+791fe7d518a8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"(*", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"See", ":", "\[IndentingNewLine]", "https", ":"}], "//", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"math", ".", "stackexchange", ".", "com"}], "/", "questions"}],
+       "/", "1423139"}], "/", "arranging"}], "-", "3", "-", "items", "-", 
+    "in", "-", "7", "-", "spots"}]}], "\[IndentingNewLine]", "*)"}]], "Input",
+ CellChangeTimes->{{3.818690741795991*^9, 
+  3.8186907646303935`*^9}},ExpressionUUID->"208b85dd-8728-4efd-bd5e-\
+e6112b3b68cc"],
+
+Cell[BoxData["210"], "Output",
+ CellChangeTimes->{3.8186907373679857`*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"72bae269-0752-4fbf-bc9a-20754a0abdc1"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"numof123a", ":=", 
+  RowBox[{
+   RowBox[{"Power", "[", 
+    RowBox[{"6", ",", "3"}], "]"}], "*", 
+   FractionBox[
+    RowBox[{"Factorial", "[", "6", "]"}], 
+    RowBox[{"Factorial", "[", "3", "]"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Consider", " ", "again", " ", "the", " ", "6"}], "-", 
+     RowBox[{"string", ":", " ", "1"}]}], ",", "2", ",", "3", ",", "_", ",", 
+    "_", ",", 
+    RowBox[{
+     RowBox[{
+     "_", "\[IndentingNewLine]", "\[IndentingNewLine]", "The", " ", "left"}], 
+     "-", 
+     RowBox[{
+     "hand", " ", "term", " ", "gives", " ", "the", " ", "number", " ", "of", 
+      " ", "ways", " ", "to", " ", "arrange", " ", "6", " ", "items", " ", 
+      "in", " ", "3", " ", "different", " ", "slots"}]}], ",", " ", 
+    RowBox[{"with", " ", "order", " ", 
+     RowBox[{
+     "mattering", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", "So"}]}],
+     ",", " ", 
+    RowBox[{
+    "if", " ", "we", " ", "constrain", " ", "the", " ", "string", " ", "with",
+      " ", "the", " ", "first", " ", "three", " ", "choices", " ", "as", " ", 
+     "1"}], ",", "2", ",", "3", ",", " ", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"there", "'"}], "d", " ", "be", " ", 
+      RowBox[{"6", "^", "3"}], " ", "different", " ", "instances", " ", "of", 
+      " ", "the", " ", 
+      RowBox[{
+      "string", ".", "\[IndentingNewLine]", "\[IndentingNewLine]", "It"}], 
+      " ", "remains", " ", "to", " ", "find", " ", "the", " ", "number", " ", 
+      "of", " ", "different", " ", "ways", " ", "to", " ", "apply", " ", 
+      "the", " ", "constraint", " ", "to", " ", "the", " ", "6"}], "-", 
+     "string"}], ",", " ", 
+    RowBox[{"i", ".", "e", "."}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+     "how", " ", "many", " ", "different", " ", "ways", " ", "can", " ", 
+      "three", " ", 
+      RowBox[{"numbers", " ", "[", " ", 
+       RowBox[{"1", ",", "2", ",", "3"}], "]"}], " ", "be", " ", "arranged", 
+      " ", "in", " ", "6", " ", 
+      RowBox[{
+      "slots", "?", "\[IndentingNewLine]", "\[IndentingNewLine]", "The"}], 
+      " ", "right"}], "-", 
+     RowBox[{
+     "hand", " ", "term", " ", "of", " ", "the", " ", "product", " ", "gives",
+       " ", "us", " ", 
+      RowBox[{"that", "."}]}]}]}], "\[IndentingNewLine]", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8186907899896383`*^9, 3.8186908138482037`*^9}, {
+  3.818690845502813*^9, 3.818690887016474*^9}, {3.8186910363815355`*^9, 
+  3.818691160124548*^9}, {3.8186912011249866`*^9, 3.8186913801711407`*^9}, {
+  3.8186915605556593`*^9, 3.8186916755948334`*^9}, {3.8186917383848133`*^9, 
+  3.8186917438982987`*^9}},ExpressionUUID->"6ea7cfce-8445-4ec9-b295-\
+761027cfc211"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"numof123a", "/", "total"}]], "Input",
+ CellChangeTimes->{{3.818690882137459*^9, 3.818690893765468*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"55599520-6a4b-47bb-84b4-fe1161a19994"],
+
+Cell[BoxData[
+ FractionBox["5", "9"]], "Output",
+ CellChangeTimes->{3.8186908943084583`*^9},
+ CellLabel->"Out[50]=",ExpressionUUID->"905a9af6-e92b-497f-af2a-cbb793d0db8c"]
+}, Open  ]]
+},
+WindowSize->{573.75, 556.5},
+WindowMargins->{{147, Automatic}, {-34.5, Automatic}},
+FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (June 19, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"7518e7be-4a6f-4d1f-b382-755e31a63c42"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 689, 13, 28, "Input",ExpressionUUID->"5bfb21a7-f6ac-4707-8162-ab4cc4c1d357"],
+Cell[1250, 35, 180, 3, 28, "Input",ExpressionUUID->"2d26c2e1-8531-4118-aaf1-774bc2d10e1c"],
+Cell[1433, 40, 907, 21, 67, "Input",ExpressionUUID->"9fc17710-1e4b-417d-8333-5987cd0b9fb6"],
+Cell[CellGroupData[{
+Cell[2365, 65, 230, 4, 28, "Input",ExpressionUUID->"47373c2d-9f8c-450b-9ce7-c870d5fb1286"],
+Cell[2598, 71, 197, 2, 32, "Output",ExpressionUUID->"2e1a517e-0fde-41d2-99bb-3478a2f1921f"]
+}, Open  ]],
+Cell[2810, 76, 131, 3, 28, "Input",ExpressionUUID->"5a68e627-1890-4ecd-a10b-2c74114b8a36"],
+Cell[2944, 81, 154, 3, 28, "Input",ExpressionUUID->"2d891da8-747c-4dba-bc89-be8b992e9808"],
+Cell[3101, 86, 1499, 32, 163, "Input",ExpressionUUID->"37a29328-e358-45c5-8cf0-a52cefbc8ac5"],
+Cell[CellGroupData[{
+Cell[4625, 122, 3215, 71, 490, InheritFromParent,ExpressionUUID->"6d9b5c94-673a-487b-a07c-78a7b01b352d"],
+Cell[7843, 195, 208, 3, 32, "Output",ExpressionUUID->"cd566e5d-7cba-4515-a478-cd6e616f229c"]
+}, Open  ]],
+Cell[8066, 201, 249, 5, 28, "Input",ExpressionUUID->"93bf5eb7-4f66-4a08-a918-97977fbc0f9a"],
+Cell[CellGroupData[{
+Cell[8340, 210, 197, 3, 28, "Input",ExpressionUUID->"a18769ca-48fe-4ec9-900b-345074c0560b"],
+Cell[8540, 215, 169, 2, 32, "Output",ExpressionUUID->"0e1858ce-9c19-4e4a-8f8b-8a946aad58a2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8746, 222, 252, 5, 28, "Input",ExpressionUUID->"99e07d71-00f1-437b-9be5-6983b8d47c41"],
+Cell[9001, 229, 169, 2, 32, "Output",ExpressionUUID->"13c19a0a-7dc3-4702-8fed-14f5223b2fdb"]
+}, Open  ]],
+Cell[9185, 234, 374, 9, 90, "Input",ExpressionUUID->"2c11b128-6927-431a-bb19-791fe7d518a8"],
+Cell[CellGroupData[{
+Cell[9584, 247, 547, 13, 106, "Input",ExpressionUUID->"208b85dd-8728-4efd-bd5e-e6112b3b68cc"],
+Cell[10134, 262, 153, 2, 32, "Output",ExpressionUUID->"72bae269-0752-4fbf-bc9a-20754a0abdc1"]
+}, Open  ]],
+Cell[10302, 267, 2769, 62, 377, "Input",ExpressionUUID->"6ea7cfce-8445-4ec9-b295-761027cfc211"],
+Cell[CellGroupData[{
+Cell[13096, 333, 206, 3, 28, "Input",ExpressionUUID->"55599520-6a4b-47bb-84b4-fe1161a19994"],
+Cell[13305, 338, 171, 3, 48, "Output",ExpressionUUID->"905a9af6-e92b-497f-af2a-cbb793d0db8c"]
+}, Open  ]]
+}
+]
+*)
+
