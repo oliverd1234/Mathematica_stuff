@@ -1,0 +1,374 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13979,        364]
+NotebookOptionsPosition[     12518,        332]
+NotebookOutlinePosition[     12853,        347]
+CellTagsIndexPosition[     12810,        344]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"arrowAxes", "[", "arrowLength_", "]"}], ":=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Apply", "[", 
+         RowBox[{"RGBColor", ",", "#"}], "]"}], ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"Tube", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "#"}], "}"}], 
+          "]"}], "]"}]}], "}"}], "&"}], ",", 
+     RowBox[{"arrowLength", " ", 
+      RowBox[{"IdentityMatrix", "[", "3", "]"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Sphere", "[", "]"}], ",", 
+      RowBox[{"arrowAxes", "[", "3", "]"}], ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"Tube", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"Map", "[", 
+           RowBox[{"N", ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "3"}], "}"}]}], "]"}]}], "}"}], 
+        "]"}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", 
+     RowBox[{
+      RowBox[{"-", "4"}], "\[Pi]"}], ",", 
+     RowBox[{"4", "\[Pi]"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7722840314491787`*^9, 3.772284069574377*^9}, 
+   3.7722841869042788`*^9, {3.772284306641963*^9, 
+   3.772284306768358*^9}},ExpressionUUID->"daad4b52-5ec7-4753-9d19-\
+011407df381b"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`\[Phi]$$ = -11.510795482753, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Phi]$$], (-4) Pi, 4 Pi}}, Typeset`size$$ = {
+    296., {163., 168.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Phi]$4518$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`\[Phi]$$ = (-4) Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`\[Phi]$$, $CellContext`\[Phi]$4518$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Sphere[], 
+         $CellContext`arrowAxes[3], 
+         Arrow[
+          Tube[{{0, 0, 0}, 
+            Map[N, {0, 0, 3}]}]]}], 
+      "Specifications" :> {{$CellContext`\[Phi]$$, (-4) Pi, 4 Pi}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{341., {208., 214.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.772284070556677*^9, 3.77228418731804*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"3194e571-3adf-4574-9b35-eb855244732f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"arrowAxes", "[", "arrowLength_", "]"}], ":=", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Apply", "[", 
+         RowBox[{"RGBColor", ",", "#"}], "]"}], ",", 
+        RowBox[{"Arrow", "[", 
+         RowBox[{"Tube", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", "#"}], "}"}], 
+          "]"}], "]"}]}], "}"}], "&"}], ",", 
+     RowBox[{"arrowLength", " ", 
+      RowBox[{"IdentityMatrix", "[", "3", "]"}]}]}], "]"}]}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.772284397664076*^9, 
+  3.772284397782524*^9}},ExpressionUUID->"536ee794-e669-4b4a-8c99-\
+0e02bc663a1b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sphericals", "[", 
+   RowBox[{"r_", ",", "\[Theta]_", ",", "\[Phi]_"}], "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"r", "*", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}], "*", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", "*", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", 
+      RowBox[{"Cos", "[", "\[Phi]", "]"}], "*", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", "*", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}], "*", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]}], "}"}]}]], "Input",\
+
+ CellChangeTimes->{{3.7722845852431707`*^9, 3.772284637849539*^9}, {
+  3.7722846741802998`*^9, 3.772284799020688*^9}, {3.772284833865817*^9, 
+  3.7722848570236397`*^9}, {3.772284928833087*^9, 3.772284936580552*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"c0b1631e-0741-4ba3-b052-85a73fbd1c9b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"IdentityMatrix", "[", "3", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7722846528004827`*^9, 3.7722846558353233`*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"37533e8e-060b-4e08-a178-1aad2eaf7d8c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.772284656217203*^9, 3.772284805713718*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"bb2d2a25-4c90-44c4-980d-90bfe03256bb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sphericals", "[", 
+  RowBox[{"1", ",", "\[Pi]", ",", 
+   RowBox[{"\[Pi]", "/", "2"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.772284811267964*^9, 3.772284817509063*^9}, {
+  3.772284897816454*^9, 3.772284915034294*^9}, {3.772284953892844*^9, 
+  3.772284953984687*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"8da699f3-3638-4f22-bdd5-c134aaee4b19"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "0"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7722848180299177`*^9, 3.7722848615737753`*^9, {3.772284900577829*^9, 
+   3.7722849544100733`*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"3ba32d1a-57a7-435a-9916-b741dde9fc67"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sphericals", "[", 
+   RowBox[{"r_", ",", "\[Theta]_", ",", "\[Phi]_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"r", "*", 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", 
+    RowBox[{"Cos", "[", "\[Phi]", "]"}], "*", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], "+", 
+   RowBox[{"r", "*", 
+    RowBox[{"Sin", "[", "\[Theta]", "]"}], "*", 
+    RowBox[{"Sin", "[", "\[Phi]", "]"}], "*", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], "+", 
+   RowBox[{"r", "*", 
+    RowBox[{"Cos", "[", "\[Theta]", "]"}], "*", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7722857491230583`*^9, 3.772285786485112*^9}, {
+  3.772285819263501*^9, 3.77228582052875*^9}, {3.7722862509612703`*^9, 
+  3.772286253843033*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"a0cf699d-fe91-434c-882d-9575bd15fbd9"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.772285019177684*^9},ExpressionUUID->"ff73db99-2687-45aa-9337-\
+4b83d8032c12"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Sphere", "[", "]"}], ",", 
+      RowBox[{"arrowAxes", "[", "3", "]"}], ",", 
+      RowBox[{"Arrow", "[", 
+       RowBox[{"Tube", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+          RowBox[{"sphericals", "[", 
+           RowBox[{"r", ",", "\[Theta]", ",", "\[Phi]"}], "]"}]}], "}"}], 
+        "]"}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Phi]", ",", "0", ",", "\[Pi]"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\[Theta]", ",", "0", ",", 
+     RowBox[{"2", "\[Pi]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.772285042228928*^9, 3.772285042359432*^9}, {
+  3.7722851018290586`*^9, 3.772285121389472*^9}, {3.772285158265687*^9, 
+  3.7722851705319433`*^9}, {3.77228540857406*^9, 3.772285411905447*^9}, {
+  3.772285453662054*^9, 3.772285464627013*^9}, {3.77228551221073*^9, 
+  3.772285552657275*^9}, {3.772285802695448*^9, 3.772285802903123*^9}, {
+  3.772285920962481*^9, 3.772285930021537*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"6953ef34-8852-4d86-8f87-4b2a703a2709"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`r$$ = 3., $CellContext`\[Theta]$$ = 
+    5.629734035232909, $CellContext`\[Phi]$$ = 0.7368227570242831, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`\[Phi]$$], 0, Pi}, {
+      Hold[$CellContext`r$$], 0, 3}, {
+      Hold[$CellContext`\[Theta]$$], 0, 2 Pi}}, Typeset`size$$ = {
+    410., {267., 271.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True, $CellContext`\[Phi]$11136$$ = 
+    0, $CellContext`r$11137$$ = 0, $CellContext`\[Theta]$11138$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`r$$ = 0, $CellContext`\[Theta]$$ = 
+        0, $CellContext`\[Phi]$$ = 0}, "ControllerVariables" :> {
+        Hold[$CellContext`\[Phi]$$, $CellContext`\[Phi]$11136$$, 0], 
+        Hold[$CellContext`r$$, $CellContext`r$11137$$, 0], 
+        Hold[$CellContext`\[Theta]$$, $CellContext`\[Theta]$11138$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> Graphics3D[{
+         Sphere[], 
+         $CellContext`arrowAxes[3], 
+         Arrow[
+          Tube[{{0, 0, 0}, 
+            $CellContext`sphericals[$CellContext`r$$, \
+$CellContext`\[Theta]$$, $CellContext`\[Phi]$$]}]]}], 
+      "Specifications" :> {{$CellContext`\[Phi]$$, 0, Pi}, {$CellContext`r$$, 
+         0, 3}, {$CellContext`\[Theta]$$, 0, 2 Pi}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{455., {367., 373.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.77228555737246*^9, {3.7722857893098373`*^9, 3.772285853793399*^9}, {
+   3.772285930457246*^9, 3.772285946785161*^9}, 3.7722861866014853`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"0ad46c5a-096c-49ea-957a-c357c7aea288"]
+}, Open  ]]
+},
+WindowSize->{808, 839},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1634, 47, 157, "Input",ExpressionUUID->"daad4b52-5ec7-4753-9d19-011407df381b"],
+Cell[2217, 71, 1846, 38, 441, "Output",ExpressionUUID->"3194e571-3adf-4574-9b35-eb855244732f"]
+}, Open  ]],
+Cell[4078, 112, 801, 23, 94, "Input",ExpressionUUID->"536ee794-e669-4b4a-8c99-0e02bc663a1b"],
+Cell[4882, 137, 1089, 27, 52, "Input",ExpressionUUID->"c0b1631e-0741-4ba3-b052-85a73fbd1c9b"],
+Cell[CellGroupData[{
+Cell[5996, 168, 251, 4, 52, "Input",ExpressionUUID->"37533e8e-060b-4e08-a178-1aad2eaf7d8c"],
+Cell[6250, 174, 402, 10, 34, "Output",ExpressionUUID->"bb2d2a25-4c90-44c4-980d-90bfe03256bb"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6689, 189, 371, 7, 30, "Input",ExpressionUUID->"8da699f3-3638-4f22-bdd5-c134aaee4b19"],
+Cell[7063, 198, 562, 16, 34, "Output",ExpressionUUID->"3ba32d1a-57a7-435a-9916-b741dde9fc67"]
+}, Open  ]],
+Cell[7640, 217, 911, 22, 86, "Input",ExpressionUUID->"a0cf699d-fe91-434c-882d-9575bd15fbd9"],
+Cell[8554, 241, 128, 3, 30, "Input",ExpressionUUID->"ff73db99-2687-45aa-9337-4b83d8032c12"],
+Cell[CellGroupData[{
+Cell[8707, 248, 1291, 30, 73, "Input",ExpressionUUID->"6953ef34-8852-4d86-8f87-4b2a703a2709"],
+Cell[10001, 280, 2501, 49, 759, "Output",ExpressionUUID->"0ad46c5a-096c-49ea-957a-c357c7aea288"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
