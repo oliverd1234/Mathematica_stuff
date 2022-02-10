@@ -1,0 +1,166 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5733,        156]
+NotebookOptionsPosition[      5255,        139]
+NotebookOutlinePosition[      5651,        155]
+CellTagsIndexPosition[      5608,        152]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"CartesianProduct", "[", 
+    RowBox[{"listM_", ",", "listN_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"list", " ", ":=", 
+        RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"listOmega", ":=", "listM"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"listOmega2", ":=", " ", "listN"}]}], "\[IndentingNewLine]", 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"generateListsOfPairs", "[", "current_", "]"}], ":=", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Module", "[", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"currentAlpha", "=", "current"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"iterator", "=", "1"}], ",", "\[IndentingNewLine]", 
+            RowBox[{"iteratorb", "=", "1"}]}], "\[IndentingNewLine]", 
+           "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"{", "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"Print", "[", "sizeOfN", "]"}], ";"}], "*)"}], 
+           "\[IndentingNewLine]", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"While", "[", "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"iterator", "<", 
+               RowBox[{
+                RowBox[{"Length", "[", "listOmega", "]"}], "+", "1"}]}], ",", 
+              " ", "\[IndentingNewLine]", 
+              RowBox[{"(*", 
+               RowBox[{"Reset", " ", "inner", " ", "iterator"}], "*)"}], 
+              "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"iteratorb", "=", "1"}], ";", "\[IndentingNewLine]", 
+               RowBox[{"While", "[", "\[IndentingNewLine]", 
+                RowBox[{
+                 RowBox[{"iteratorb", "<", 
+                  RowBox[{
+                   RowBox[{"Length", "[", "listOmega2", "]"}], "+", "1"}]}], 
+                 ",", "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"AppendTo", "[", 
+                   RowBox[{"list", ",", 
+                    RowBox[{"{", 
+                    RowBox[{
+                    RowBox[{"listOmega", "[", 
+                    RowBox[{"[", "iterator", "]"}], "]"}], ",", 
+                    RowBox[{"listOmega2", "[", 
+                    RowBox[{"[", "iteratorb", "]"}], "]"}]}], "}"}]}], "]"}], 
+                  ";", "\[IndentingNewLine]", 
+                  RowBox[{"iteratorb", "++"}]}]}], "\[IndentingNewLine]", 
+                "]"}], ";", "\[IndentingNewLine]", 
+               RowBox[{"iterator", "++"}]}]}], "\[IndentingNewLine]", "]"}], 
+            ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "}"}]}], 
+         "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"generateListsOfPairs", "[", 
+        RowBox[{"{", "}"}], "]"}], ";", "\[IndentingNewLine]", "list"}], 
+      "\[IndentingNewLine]", "}"}]}], "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"CartesianProduct", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "3"}], "}"}]}], "]"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"eab23da5-544f-4d35-ace0-1e9f1daa5888"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"3", ",", "3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "3"}], "}"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8531096097265787`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"c8fcdafe-090f-41f3-b169-3d4dd38b6e91"]
+}, Open  ]]
+},
+WindowSize->{1904, 989},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"b01093af-06fd-47c4-a874-c404ebac96f3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 3542, 77, 770, "Input",ExpressionUUID->"eab23da5-544f-4d35-ace0-1e9f1daa5888"],
+Cell[4125, 101, 1114, 35, 56, "Output",ExpressionUUID->"c8fcdafe-090f-41f3-b169-3d4dd38b6e91"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

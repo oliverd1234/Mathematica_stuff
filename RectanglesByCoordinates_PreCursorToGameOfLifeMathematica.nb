@@ -1,0 +1,151 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5195,        141]
+NotebookOptionsPosition[      4621,        123]
+NotebookOutlinePosition[      5017,        139]
+CellTagsIndexPosition[      4974,        136]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"rectangles", ":=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Rectangle", "[", 
+        RowBox[{"{", 
+         RowBox[{"1", ",", 
+          RowBox[{"i", "-", "1"}]}], "}"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "20"}], "}"}]}], "]"}]}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"rectangles", ",", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Rectangle", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "}"}]}], "]"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"AppendTo", "[", 
+    RowBox[{"rectangles", ",", 
+     RowBox[{"{", 
+      RowBox[{"Green", ",", 
+       RowBox[{"Rectangle", "[", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], "]"}]}], "}"}]}]}], "*)"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Graphics", "@", "rectangles"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Rectangle", "[", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "1"}], "}"}], "]"}], ",", 
+      RowBox[{"Rectangle", "[", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "2"}], "}"}], "]"}]}], "}"}], "]"}], ",", 
+   RowBox[{"Graphics", "@", "rectangles"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.853109376418211*^9, 3.85310946642117*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"7423b116-9749-4971-8b70-f05d688c36de"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[1, 0, 0], RectangleBox[{1, 0}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 1}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 2}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 3}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 4}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 5}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 6}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 7}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 8}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 9}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 10}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 11}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 12}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 13}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 14}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 15}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 16}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 17}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 18}]}, 
+   {RGBColor[1, 0, 0], RectangleBox[{1, 19}]}}]], "Output",
+ CellChangeTimes->{{3.853109345398409*^9, 3.8531093552774367`*^9}, {
+  3.853109446051593*^9, 3.853109466734171*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"5a68e9d8-21ed-44a1-8b9a-1068337fa543"],
+
+Cell[BoxData[
+ GraphicsBox[{{RectangleBox[{0, 1}], RectangleBox[{2, 2}]}, {
+    {RGBColor[1, 0, 0], RectangleBox[{1, 0}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 1}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 2}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 3}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 4}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 5}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 6}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 7}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 8}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 9}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 10}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 11}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 12}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 13}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 14}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 15}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 16}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 17}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 18}]}, 
+    {RGBColor[1, 0, 0], RectangleBox[{1, 19}]}}}]], "Output",
+ CellChangeTimes->{{3.853109345398409*^9, 3.8531093552774367`*^9}, {
+  3.853109446051593*^9, 3.853109466740172*^9}},
+ CellLabel->"Out[13]=",ExpressionUUID->"2cd54d4e-bf94-4bd8-b045-4924061b36f6"]
+}, Open  ]]
+},
+WindowSize->{1904, 989},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1e53af39-66e7-4710-a0f0-f7deaf721146"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1579, 46, 130, "Input",ExpressionUUID->"7423b116-9749-4971-8b70-f05d688c36de"],
+Cell[2162, 70, 1186, 24, 472, "Output",ExpressionUUID->"5a68e9d8-21ed-44a1-8b9a-1068337fa543"],
+Cell[3351, 96, 1254, 24, 449, "Output",ExpressionUUID->"2cd54d4e-bf94-4bd8-b045-4924061b36f6"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
