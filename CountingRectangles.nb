@@ -1,0 +1,927 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     37736,        919]
+NotebookOptionsPosition[     36439,        888]
+NotebookOutlinePosition[     36871,        905]
+CellTagsIndexPosition[     36828,        902]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Define", " ", "a", " ", "function", " ", "to", " ", "count", " ", 
+    "rectangles", " ", "formed", " ", "by", " ", "m", " ", "horizontal", " ", 
+    "lines", " ", "and", " ", "n", " ", "vertical", " ", "lines"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"CountRectangles", "[", 
+      RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"m", "-", "1"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"n", "-", "1"}], ")"}], "*", "m", "*", 
+      RowBox[{"n", "/", "4"}]}]}], ";"}], "\n", "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Create", " ", "a", " ", "dynamic", " ", "visualization", " ", "for", " ",
+      "the", " ", "grid", " ", "and", " ", "the", " ", "count", " ", "of", 
+     " ", "rectangles"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"points", ",", "lines", ",", "rectangles"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Generate", " ", "grid", " ", "points"}], "*)"}], 
+       RowBox[{
+        RowBox[{"points", "=", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}], ",", "1"}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Generate", " ", "vertical", " ", "and", " ", "horizontal", " ", 
+          "lines"}], "*)"}], 
+        RowBox[{"lines", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", 
+                  RowBox[{"m", "+", "1"}]}], "}"}]}], "}"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "j"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"n", "+", "1"}], ",", "j"}], "}"}]}], "}"}], "]"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Calculate", " ", "the", " ", "number", " ", "of", " ", 
+          "rectangles"}], "*)"}], 
+        RowBox[{"rectangles", "=", 
+         RowBox[{"CountRectangles", "[", 
+          RowBox[{"m", ",", "n"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Create", " ", "a", " ", "graphic", " ", "representation", " ", "of",
+           " ", "the", " ", "grid", " ", "and", " ", "display", " ", "the", 
+          " ", "count", " ", "of", " ", "rectangles"}], "*)"}], 
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", "lines", ",", 
+            RowBox[{"(*", 
+             RowBox[{"Draw", " ", "lines", " ", "in", " ", "gray"}], "*)"}], 
+            RowBox[{"PointSize", "[", "Medium", "]"}], ",", 
+            RowBox[{"Point", "[", "points", "]"}]}], " ", 
+           RowBox[{"(*", 
+            RowBox[{"Draw", " ", "points"}], "*)"}], "}"}], ",", 
+          RowBox[{"Frame", "->", "True"}], ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"StringForm", "[", 
+              RowBox[{"\"\<Total Rectangles: ``\>\"", ",", "rectangles"}], 
+              "]"}], ",", "16", ",", "Blue"}], "]"}]}], ",", 
+          RowBox[{"ImageSize", "->", "300"}]}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"Manipulate", " ", 
+       RowBox[{"variables", ":", 
+        RowBox[{"m", " ", "and", " ", "n", " ", "with", " ", "sliders"}]}]}], 
+      "*)"}], 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"m", ",", "5", ",", "\"\<Horizontal Lines (m)\>\""}], "}"}], 
+       ",", "2", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"n", ",", "5", ",", "\"\<Vertical Lines (n)\>\""}], "}"}], 
+       ",", "2", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], "]"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9290920061814156`*^9, 3.9290920091300907`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c69aa948-3be3-42bc-a36f-b5d89557d149"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 2, $CellContext`n$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 5, "Horizontal Lines (m)"}, 2, 10, 1}, {{
+       Hold[$CellContext`n$$], 5, "Vertical Lines (n)"}, 2, 10, 1}}, 
+    Typeset`size$$ = {300., {155., 158.8796436769136}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`m$$ = 5, $CellContext`n$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`points$, $CellContext`lines$, \
+$CellContext`rectangles$}, $CellContext`points$ = Flatten[
+           
+           Table[{$CellContext`i, $CellContext`j}, {$CellContext`i, \
+$CellContext`n$$ + 1}, {$CellContext`j, $CellContext`m$$ + 1}], 
+           1]; $CellContext`lines$ = {
+           Table[
+            
+            Line[{{$CellContext`i, 1}, {$CellContext`i, $CellContext`m$$ + 
+               1}}], {$CellContext`i, $CellContext`n$$ + 1}], 
+           Table[
+            
+            Line[{{1, $CellContext`j}, {$CellContext`n$$ + 
+               1, $CellContext`j}}], {$CellContext`j, $CellContext`m$$ + 
+             1}]}; $CellContext`rectangles$ = \
+$CellContext`CountRectangles[$CellContext`m$$, $CellContext`n$$]; Graphics[{
+           GrayLevel[0.8], $CellContext`lines$, 
+           PointSize[Medium], 
+           Point[$CellContext`points$]}, Frame -> True, PlotLabel -> Style[
+            StringForm["Total Rectangles: ``", $CellContext`rectangles$], 16, 
+            Blue], ImageSize -> 300]], 
+      "Specifications" :> {{{$CellContext`m$$, 5, "Horizontal Lines (m)"}, 2, 
+         10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`n$$, 5, "Vertical Lines (n)"}, 2, 10, 1, 
+         Appearance -> "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{348., {209.13403309800196`, 214.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.9290920101415586`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"836f619c-cb20-49e8-ba0a-5d86d1185a94"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Define", " ", "a", " ", "function", " ", "to", " ", "count", " ", 
+     "rectangles", " ", "formed", " ", "by", " ", "m"}], "+", 
+    RowBox[{"1", " ", "horizontal", " ", "lines", " ", "and", " ", "n"}], "+", 
+    RowBox[{"1", " ", "vertical", " ", "lines"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"CountRectangles", "[", 
+      RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"m", "+", "1"}], ",", "2"}], "]"}], "*", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "2"}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Create", " ", "a", " ", "dynamic", " ", "visualization", " ", "for", " ",
+      "the", " ", "grid", " ", "and", " ", "the", " ", "count", " ", "of", 
+     " ", "rectangles"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"points", ",", "lines", ",", "rectangles"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Generate", " ", "grid", " ", "points"}], "*)"}], 
+       RowBox[{
+        RowBox[{"points", "=", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}], ",", "1"}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Generate", " ", "vertical", " ", "and", " ", "horizontal", " ", 
+          "lines"}], "*)"}], 
+        RowBox[{"lines", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", 
+                  RowBox[{"m", "+", "1"}]}], "}"}]}], "}"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "j"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"n", "+", "1"}], ",", "j"}], "}"}]}], "}"}], "]"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Calculate", " ", "the", " ", "number", " ", "of", " ", 
+          "rectangles"}], "*)"}], 
+        RowBox[{"rectangles", "=", 
+         RowBox[{"CountRectangles", "[", 
+          RowBox[{"m", ",", "n"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Create", " ", "a", " ", "graphic", " ", "representation", " ", "of",
+           " ", "the", " ", "grid", " ", "and", " ", "display", " ", "the", 
+          " ", "count", " ", "of", " ", "rectangles"}], "*)"}], 
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", "lines", ",", 
+            RowBox[{"(*", 
+             RowBox[{"Draw", " ", "lines", " ", "in", " ", "gray"}], "*)"}], 
+            RowBox[{"PointSize", "[", "Medium", "]"}], ",", 
+            RowBox[{"Point", "[", "points", "]"}]}], " ", 
+           RowBox[{"(*", 
+            RowBox[{"Draw", " ", "points"}], "*)"}], "}"}], ",", 
+          RowBox[{"Frame", "->", "True"}], ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"StringForm", "[", 
+              RowBox[{"\"\<Total Rectangles: ``\>\"", ",", "rectangles"}], 
+              "]"}], ",", "16", ",", "Blue"}], "]"}]}], ",", 
+          RowBox[{"ImageSize", "->", "300"}]}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"Manipulate", " ", 
+       RowBox[{"variables", ":", 
+        RowBox[{"m", " ", "and", " ", "n", " ", "with", " ", "sliders"}]}]}], 
+      "*)"}], 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "m", ",", "5", ",", "\"\<Gaps Between Horizontal Lines (m)\>\""}], 
+        "}"}], ",", "1", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "n", ",", "5", ",", "\"\<Gaps Between Vertical Lines (n)\>\""}], 
+        "}"}], ",", "1", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], "]"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9290923376025248`*^9, 3.9290923436328444`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"2bb75165-bd3e-4baa-9703-5670bb5cda33"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 1, $CellContext`n$$ = 1, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 5, "Gaps Between Horizontal Lines (m)"}, 1, 10,
+       1}, {{
+       Hold[$CellContext`n$$], 5, "Gaps Between Vertical Lines (n)"}, 1, 10, 
+      1}}, Typeset`size$$ = {300., {155., 158.87964367691347`}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`m$$ = 5, $CellContext`n$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`points$, $CellContext`lines$, \
+$CellContext`rectangles$}, $CellContext`points$ = Flatten[
+           
+           Table[{$CellContext`i, $CellContext`j}, {$CellContext`i, \
+$CellContext`n$$ + 1}, {$CellContext`j, $CellContext`m$$ + 1}], 
+           1]; $CellContext`lines$ = {
+           Table[
+            
+            Line[{{$CellContext`i, 1}, {$CellContext`i, $CellContext`m$$ + 
+               1}}], {$CellContext`i, $CellContext`n$$ + 1}], 
+           Table[
+            
+            Line[{{1, $CellContext`j}, {$CellContext`n$$ + 
+               1, $CellContext`j}}], {$CellContext`j, $CellContext`m$$ + 
+             1}]}; $CellContext`rectangles$ = \
+$CellContext`CountRectangles[$CellContext`m$$, $CellContext`n$$]; Graphics[{
+           GrayLevel[0.8], $CellContext`lines$, 
+           PointSize[Medium], 
+           Point[$CellContext`points$]}, Frame -> True, PlotLabel -> Style[
+            StringForm["Total Rectangles: ``", $CellContext`rectangles$], 16, 
+            Blue], ImageSize -> 300]], 
+      "Specifications" :> {{{$CellContext`m$$, 5, 
+          "Gaps Between Horizontal Lines (m)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`n$$, 5, 
+          "Gaps Between Vertical Lines (n)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{398., {209.13403309800196`, 214.86596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9290923397571898`*^9, 3.9290923443282213`*^9}},
+ CellLabel->"Out[7]=",ExpressionUUID->"a4416cb2-3d50-46f9-8f96-daec286715ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+    "Define", " ", "a", " ", "function", " ", "to", " ", "count", " ", 
+     "rectangles", " ", "formed", " ", "by", " ", "m"}], "+", 
+    RowBox[{"1", " ", "horizontal", " ", "lines", " ", "and", " ", "n"}], "+", 
+    RowBox[{"1", " ", "vertical", " ", "lines"}]}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"CountRectangles", "[", 
+      RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"m", "+", "1"}], ",", "2"}], "]"}], "*", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "2"}], "]"}]}]}], ";"}], "\n", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Create", " ", "a", " ", "dynamic", " ", "visualization", " ", "for", " ",
+      "the", " ", "grid", " ", "and", " ", "the", " ", "count", " ", "of", 
+     " ", "rectangles", " ", "with", " ", "detailed", " ", "explanations"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "points", ",", "lines", ",", "rectangles", ",", "binomialH", ",", 
+         "binomialV"}], "}"}], ",", 
+       RowBox[{"(*", 
+        RowBox[{"Generate", " ", "grid", " ", "points"}], "*)"}], 
+       RowBox[{
+        RowBox[{"points", "=", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}], ",", "1"}], "]"}]}],
+         ";", "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Generate", " ", "vertical", " ", "and", " ", "horizontal", " ", 
+          "lines"}], "*)"}], 
+        RowBox[{"lines", "=", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "1"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", 
+                  RowBox[{"m", "+", "1"}]}], "}"}]}], "}"}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", 
+               RowBox[{"n", "+", "1"}]}], "}"}]}], "]"}], ",", 
+           RowBox[{"Table", "[", 
+            RowBox[{
+             RowBox[{"Line", "[", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"{", 
+                 RowBox[{"1", ",", "j"}], "}"}], ",", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"n", "+", "1"}], ",", "j"}], "}"}]}], "}"}], "]"}], 
+             ",", 
+             RowBox[{"{", 
+              RowBox[{"j", ",", 
+               RowBox[{"m", "+", "1"}]}], "}"}]}], "]"}]}], "}"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Calculate", " ", "the", " ", "number", " ", "of", " ", 
+          "rectangles"}], "*)"}], 
+        RowBox[{"rectangles", "=", 
+         RowBox[{"CountRectangles", "[", 
+          RowBox[{"m", ",", "n"}], "]"}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"binomialH", "=", 
+         RowBox[{"Binomial", "[", 
+          RowBox[{
+           RowBox[{"m", "+", "1"}], ",", "2"}], "]"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Binomial", " ", "coefficient", " ", "for", " ", "horizontal", " ", 
+          "lines"}], "*)"}], 
+        RowBox[{"binomialV", "=", 
+         RowBox[{"Binomial", "[", 
+          RowBox[{
+           RowBox[{"n", "+", "1"}], ",", "2"}], "]"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Binomial", " ", "coefficient", " ", "for", " ", "vertical", " ", 
+          "lines"}], "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+         "Create", " ", "a", " ", "graphic", " ", "representation", " ", "of",
+           " ", "the", " ", "grid", " ", "and", " ", "display", " ", "the", 
+          " ", "detailed", " ", "count", " ", "of", " ", "rectangles"}], 
+         "*)"}], 
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"GrayLevel", "[", "0.8", "]"}], ",", "lines", ",", 
+            RowBox[{"(*", 
+             RowBox[{"Draw", " ", "lines", " ", "in", " ", "gray"}], "*)"}], 
+            RowBox[{"PointSize", "[", "Medium", "]"}], ",", 
+            RowBox[{"Point", "[", "points", "]"}]}], " ", 
+           RowBox[{"(*", 
+            RowBox[{"Draw", " ", "points"}], "*)"}], "}"}], ",", 
+          RowBox[{"Frame", "->", "True"}], ",", 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"StringForm", "[", 
+              RowBox[{
+              "\"\<Total Rectangles: ``\\n(Choose 2 lines from `` horizontal: \
+``) x (Choose 2 lines from `` vertical: ``) = ``\>\"", ",", "rectangles", ",", 
+               RowBox[{"m", "+", "1"}], ",", "binomialH", ",", 
+               RowBox[{"n", "+", "1"}], ",", "binomialV", ",", "rectangles"}],
+               "]"}], ",", "14", ",", "Blue"}], "]"}]}], ",", 
+          RowBox[{"ImageSize", "->", "350"}]}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{"Manipulate", " ", 
+       RowBox[{"variables", ":", 
+        RowBox[{"m", " ", "and", " ", "n", " ", "with", " ", "sliders"}]}]}], 
+      "*)"}], 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "m", ",", "5", ",", "\"\<Gaps Between Horizontal Lines (m)\>\""}], 
+        "}"}], ",", "1", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "n", ",", "5", ",", "\"\<Gaps Between Vertical Lines (n)\>\""}], 
+        "}"}], ",", "1", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], "]"}], 
+   "\n"}]}]], "Input",
+ CellChangeTimes->{{3.929096984788151*^9, 3.9290969956050653`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"a4bffa64-a497-4a14-8c95-1ae4249908f4"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m$$ = 1, $CellContext`n$$ = 2, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m$$], 5, "Gaps Between Horizontal Lines (m)"}, 1, 10,
+       1}, {{
+       Hold[$CellContext`n$$], 5, "Gaps Between Vertical Lines (n)"}, 1, 10, 
+      1}}, Typeset`size$$ = {602.75, {175., 179.3080127780915}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`m$$ = 5, $CellContext`n$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`points$, $CellContext`lines$, \
+$CellContext`rectangles$, $CellContext`binomialH$, $CellContext`binomialV$}, \
+$CellContext`points$ = Flatten[
+           
+           Table[{$CellContext`i, $CellContext`j}, {$CellContext`i, \
+$CellContext`n$$ + 1}, {$CellContext`j, $CellContext`m$$ + 1}], 
+           1]; $CellContext`lines$ = {
+           Table[
+            
+            Line[{{$CellContext`i, 1}, {$CellContext`i, $CellContext`m$$ + 
+               1}}], {$CellContext`i, $CellContext`n$$ + 1}], 
+           Table[
+            
+            Line[{{1, $CellContext`j}, {$CellContext`n$$ + 
+               1, $CellContext`j}}], {$CellContext`j, $CellContext`m$$ + 
+             1}]}; $CellContext`rectangles$ = \
+$CellContext`CountRectangles[$CellContext`m$$, $CellContext`n$$]; \
+$CellContext`binomialH$ = 
+         Binomial[$CellContext`m$$ + 1, 2]; $CellContext`binomialV$ = 
+         Binomial[$CellContext`n$$ + 1, 2]; Graphics[{
+           GrayLevel[0.8], $CellContext`lines$, 
+           PointSize[Medium], 
+           Point[$CellContext`points$]}, Frame -> True, PlotLabel -> Style[
+            StringForm[
+            "Total Rectangles: ``\n(Choose 2 lines from `` horizontal: ``) x \
+(Choose 2 lines from `` vertical: ``) = ``", $CellContext`rectangles$, \
+$CellContext`m$$ + 1, $CellContext`binomialH$, $CellContext`n$$ + 
+             1, $CellContext`binomialV$, $CellContext`rectangles$], 14, Blue],
+           ImageSize -> 350]], 
+      "Specifications" :> {{{$CellContext`m$$, 5, 
+          "Gaps Between Horizontal Lines (m)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`n$$, 5, 
+          "Gaps Between Vertical Lines (n)"}, 1, 10, 1, Appearance -> 
+         "Labeled"}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{651., {229.63403309800196`, 235.36596690199804`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.929096985824917*^9, 3.9290970006495824`*^9}},
+ CellLabel->"Out[12]=",ExpressionUUID->"54ceb74a-5163-427b-a800-730fe8898d18"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"adding", " ", "a", " ", "line", " ", "to", " ", "m"}], ",", " ", 
+   RowBox[{
+    RowBox[{"or", " ", "n", " ", "lines", " ", "creates", " ", "m"}], "+", 
+    RowBox[{"1", " ", "pairs", " ", "of", " ", 
+     RowBox[{"lines", "."}]}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "*)"}]], "Input",
+ CellChangeTimes->{{3.9290977138346252`*^9, 
+  3.9290977320812745`*^9}},ExpressionUUID->"af9c7f2a-46a0-49a6-81fd-\
+0e932ce17611"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+   "Function", " ", "to", " ", "calculate", " ", "the", " ", "number", " ", 
+    "of", " ", "rectangles"}], "*)"}], 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"CountRectangles", "[", 
+      RowBox[{"m_", ",", "n_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"m", "+", "1"}], ",", "2"}], "]"}], "*", 
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "1"}], ",", "2"}], "]"}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Generate", " ", "a", " ", "matrix", " ", "of", " ", "rectangle", " ", 
+     "counts", " ", "for", " ", "a", " ", "given", " ", "size", " ", "n"}], 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"RectangleMatrix", "[", "n_", "]"}], ":=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"CountRectangles", "[", 
+        RowBox[{"i", ",", "j"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "n"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", "n"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\n", 
+   RowBox[{"(*", 
+    RowBox[{
+    "Create", " ", "a", " ", "dynamic", " ", "visualization", " ", "for", " ",
+      "the", " ", "nxn", " ", "grid", " ", "showing", " ", "rectangle", " ", 
+     "counts"}], "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"Manipulate", "[", 
+    RowBox[{
+     RowBox[{"Module", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"matrix", ",", "labels"}], "}"}], ",", 
+       RowBox[{
+        RowBox[{"matrix", "=", 
+         RowBox[{"RectangleMatrix", "[", "n", "]"}]}], ";", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Get", " ", "the", " ", "matrix", " ", "of", " ", "rectangle", " ", 
+          "counts"}], "*)"}], 
+        RowBox[{"(*", 
+         RowBox[{
+         "Create", " ", "labels", " ", "for", " ", "each", " ", "cell", " ", 
+          "with", " ", "the", " ", "count", " ", "of", " ", "rectangles"}], 
+         "*)"}], 
+        RowBox[{"labels", "=", 
+         RowBox[{"Table", "[", 
+          RowBox[{
+           RowBox[{"Text", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"matrix", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", "j"}], "]"}], "]"}], ",", "Medium"}], 
+              "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "j"}], "}"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"i", ",", "n"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"j", ",", "n"}], "}"}]}], "]"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", 
+         RowBox[{
+         "Generate", " ", "a", " ", "grid", " ", "graphic", " ", "with", " ", 
+          "labeled", " ", "nodes"}], "*)"}], 
+        RowBox[{"Graphics", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"(*", 
+            RowBox[{"Draw", " ", "grid", " ", "lines"}], "*)"}], 
+           RowBox[{
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"i", ",", "0"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"i", ",", "n"}], "}"}]}], "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"i", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
+            RowBox[{"Table", "[", 
+             RowBox[{
+              RowBox[{"Line", "[", 
+               RowBox[{"{", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{"0", ",", "j"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"n", ",", "j"}], "}"}]}], "}"}], "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"j", ",", "0", ",", "n"}], "}"}]}], "]"}], ",", 
+            RowBox[{"(*", 
+             RowBox[{"Add", " ", "labels"}], "*)"}], "labels"}], "}"}], ",", 
+          RowBox[{"GridLines", "->", "Automatic"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Add", " ", "grid", " ", "lines", " ", "automatically"}], 
+           "*)"}], 
+          RowBox[{"PlotRange", "->", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "n"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", "n"}], "}"}]}], "}"}]}], ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "Set", " ", "plot", " ", "range", " ", "to", " ", "fit", " ", 
+            "the", " ", "grid"}], "*)"}], 
+          RowBox[{"Axes", "->", "True"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Add", " ", "axes", " ", "to", " ", "the", " ", "plot"}], 
+           "*)"}], 
+          RowBox[{"AxesOrigin", "->", 
+           RowBox[{"{", 
+            RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+          RowBox[{"(*", 
+           RowBox[{
+           "Start", " ", "axes", " ", "at", " ", "the", " ", "origin"}], 
+           "*)"}], 
+          RowBox[{"PlotLabel", "->", 
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<Number of Rectangles in Grids\>\"", ",", "16"}], 
+            "]"}]}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Title", " ", "for", " ", "the", " ", "graphic"}], "*)"}], 
+          RowBox[{"ImageSize", "->", "300"}]}], " ", 
+         RowBox[{"(*", 
+          RowBox[{"Set", " ", "image", " ", "size"}], "*)"}], "]"}]}]}], 
+      "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"n", ",", "5", ",", "\"\<Grid Size (n x n)\>\""}], "}"}], ",",
+        "1", ",", "10", ",", "1", ",", 
+       RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}]}], " ", 
+    RowBox[{"(*", 
+     RowBox[{
+     "Manipulate", " ", "variable", " ", "n", " ", "with", " ", "a", " ", 
+      "slider"}], "*)"}], "]"}], "\n"}]}]], "Input",
+ CellChangeTimes->{{3.9290981982353554`*^9, 3.9290981982353554`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"339cea90-d932-4fa5-826a-31a5a5465990"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`n$$ = 5, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`n$$], 5, "Grid Size (n x n)"}, 1, 10, 1}}, 
+    Typeset`size$$ = {648., {334., 337.661474609375}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`n$$ = 5}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Module[{$CellContext`matrix$, $CellContext`labels$}, \
+$CellContext`matrix$ = $CellContext`RectangleMatrix[$CellContext`n$$]; \
+$CellContext`labels$ = Table[
+           Text[
+            Style[
+             Part[$CellContext`matrix$, $CellContext`i, $CellContext`j], 
+             Medium], {$CellContext`i, $CellContext`j}], {$CellContext`i, \
+$CellContext`n$$}, {$CellContext`j, $CellContext`n$$}]; Graphics[{
+           Table[
+            
+            Line[{{$CellContext`i, 
+               0}, {$CellContext`i, $CellContext`n$$}}], {$CellContext`i, 
+             0, $CellContext`n$$}], 
+           Table[
+            
+            Line[{{0, $CellContext`j}, {$CellContext`n$$, $CellContext`j}}], \
+{$CellContext`j, 0, $CellContext`n$$}], $CellContext`labels$}, GridLines -> 
+          Automatic, 
+          PlotRange -> {{0, $CellContext`n$$}, {0, $CellContext`n$$}}, Axes -> 
+          True, AxesOrigin -> {0, 0}, PlotLabel -> 
+          Style["Number of Rectangles in Grids", 16], ImageSize -> 300]], 
+      "Specifications" :> {{{$CellContext`n$$, 5, "Grid Size (n x n)"}, 1, 10,
+          1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{691., {372.9206298197387, 378.0793701802613}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.929098199623268*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"ce2f8ef9-a050-4a7e-95c5-795c90268086"]
+}, Open  ]]
+},
+WindowSize->{1440, 741.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+Magnification:>0.9 Inherited,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2733f4af-0d1d-4752-a153-c792c34feca3"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5266, 132, 248, "Input",ExpressionUUID->"c69aa948-3be3-42bc-a36f-b5d89557d149"],
+Cell[5849, 156, 2920, 57, 398, "Output",ExpressionUUID->"836f619c-cb20-49e8-ba0a-5d86d1185a94"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8806, 218, 5413, 138, 248, "Input",ExpressionUUID->"2bb75165-bd3e-4baa-9703-5670bb5cda33"],
+Cell[14222, 358, 3021, 59, 398, "Output",ExpressionUUID->"a4416cb2-3d50-46f9-8f96-daec286715ef"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17280, 422, 6401, 162, 300, "Input",ExpressionUUID->"a4bffa64-a497-4a14-8c95-1ae4249908f4"],
+Cell[23684, 586, 3451, 67, 435, "Output",ExpressionUUID->"54ceb74a-5163-427b-a800-730fe8898d18"]
+}, Open  ]],
+Cell[27150, 656, 532, 11, 94, "Input",ExpressionUUID->"af9c7f2a-46a0-49a6-81fd-0e932ce17611"],
+Cell[CellGroupData[{
+Cell[27707, 671, 6049, 158, 231, "Input",ExpressionUUID->"339cea90-d932-4fa5-826a-31a5a5465990"],
+Cell[33759, 831, 2664, 54, 768, "Output",ExpressionUUID->"ce2f8ef9-a050-4a7e-95c5-795c90268086"]
+}, Open  ]]
+}
+]
+*)
+
